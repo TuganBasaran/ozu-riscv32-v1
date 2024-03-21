@@ -330,7 +330,7 @@ void handle_instruction()
 	/*
 	This is the operation code that determines the type of instruction to be executed. It is obtained by bitwise AND operation with 0x7F (which is 7 bits of 1 in binary) to extract the least significant 7 bits of the instruction.
 	*/
-	uint32_t rd = (current_ins >> 7) & 0x1F; // 0X1F = 31
+	uint32_t rd = (current_ins >> 7) & 0x1F;
 	uint32_t rs1 = (current_ins >> 15) & 0x1F;
 	uint32_t rs2 = (current_ins >> 20) & 0x1F;
 	/*
@@ -609,10 +609,7 @@ void handle_instruction()
 	{
 		if (funct3 == 0x0 && current_ins == 0x00000073)
 		{
-			if (CURRENT_STATE.REGS[0x17] == 93)
-			{
-				RUN_FLAG = FALSE;
-			}
+			RUN_FLAG = FALSE;
 		}
 	}
 
@@ -872,31 +869,31 @@ void print_instruction(uint32_t addr)
 		}
 	}
 
-	else if (opcode == 0x37) //lui
+	else if (opcode == 0x37) // lui
 	{
 		uint32_t imm_u = (instruction >> 12) & 0xFFFFF;
 		printf("lui\tx%d, %d\n", rd, sign_extend(imm_u, 20));
 	}
 
-	else if (opcode == 0x17) //auipc
+	else if (opcode == 0x17) // auipc
 	{
 		uint32_t imm_u = (instruction >> 12) & 0xFFFFF;
 		printf("auipc\tx%d, %d\n", rd, sign_extend(imm_u, 20));
 	}
 
-	else if (opcode == 0x6F) //jal
+	else if (opcode == 0x6F) // jal
 	{
 		uint32_t offset = ((instruction >> 31) << 20) | (((instruction >> 21) & 0x3FF) << 1) | (((instruction >> 20) & 0x1) << 11) | ((instruction >> 12) & 0xFF) << 12;
 		printf("jal\tx%d, %d\n", rd, sign_extend(offset, 20));
 	}
 
-	else if (opcode == 0x67) //jalr
+	else if (opcode == 0x67) // jalr
 	{
 		uint32_t offset = (instruction >> 20) & 0xFFF;
 		printf("jalr\tx%d, x%d, %d\n", rd, rs1, sign_extend(offset, 12));
 	}
 
-	else if (opcode == 0x73) //ecall
+	else if (opcode == 0x73) // ecall
 	{
 		if (funct3 == 0x0 && instruction == 0x00000073)
 		{
@@ -904,14 +901,13 @@ void print_instruction(uint32_t addr)
 		}
 	}
 
-	else if (opcode == 0x73) //nop
+	else if (opcode == 0x73) // nop
 	{
 		if (funct3 == 0x0 && instruction == 0x00000013)
 		{
 			printf("nop\n");
 		}
 	}
-	
 }
 
 /***************************************************************/
