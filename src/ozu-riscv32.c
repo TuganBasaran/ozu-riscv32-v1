@@ -489,11 +489,11 @@ void handle_instruction()
 	// I- Format Load Instructions
 	else if (opcode == 0x3)
 	{
-		int32_t offset = ((current_ins >> 20) << 20) >> 20;
+		uint32_t offset = (current_ins >> 20) & 0xFFF;
 		if (funct3 == 0x0) // lb: load byte
 		{
-			NEXT_STATE.REGS[rd] = (int8_t)mem_read_32(CURRENT_STATE.REGS[rs1] + offset);
-		}
+			NEXT_STATE.REGS[rd] = (int8_t)mem_read_32(CURRENT_STATE.REGS[rs1] + sign_extend(offset, 12));
+			}
 		else if (funct3 == 0x1) // lh: load halfword
 		{
 			NEXT_STATE.REGS[rd] = (int16_t)mem_read_32(CURRENT_STATE.REGS[rs1] + sign_extend(offset, 12));
@@ -535,7 +535,7 @@ void handle_instruction()
 	// SB-TYPE INSTRUCTIONS
 	else if (opcode == 0x63)
 	{	//12 bit long offset
-		uint32_t offset = ((current_ins >> 31) << 11) | (((current_ins >> 7) & 0x1) << 10) | (((current_ins >> 25) & 0x3F) << 4) | (((current_ins >> 8) & 0xF) << 0);
+		uint32_t offset = ((current_ins >> 31) << 12) | (((current_ins >> 7) & 0x1) << 11) | (((current_ins >> 25) & 0x3F) << 5) | (((current_ins >> 8) & 0xF) << 1);
 		if (funct3 == 0x0) // beq: branch equal
 		{
 			if (CURRENT_STATE.REGS[rs1] == CURRENT_STATE.REGS[rs2])
@@ -585,9 +585,9 @@ void handle_instruction()
 	{	
 
 		uint32_t imm = (current_ins >> 12) & 0xFFFFF; // Extract 20-bit immediate
-    	NEXT_STATE.REGS[rd] = sign_extend(imm << 12, 20); // Shift left by 12 bits
+    	NEXT_STATE.REGS[rd] = sign_extend(imm << 12, 20); // Shift left bx y 12 bits
 	}
-	else if (opcode == 0x17) // auipc
+	else if (opcode == 0x17) // auipc: Build pc-relative addresses and uses the U-type format. AUIPC forms a 32-bit offset from the 20-bit U-immediate, filling in the lowest 12 bits with zeros, adds this offset to the pc, then places the result in register rd.
 	{
 		uint32_t imm = (current_ins >> 12) & 0xFFFFF; // Extract 20-bit immediate
 		NEXT_STATE.REGS[rd] = CURRENT_STATE.PC + sign_extend(imm << 12, 20); // Shift left by 12 bits and add to PC

@@ -2,30 +2,30 @@
 triple:          'arm64-apple-darwin'
 binary-path:     ozu-riscv32
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _help, symObjAddr: 0x0, symBinAddr: 0x100001970, symSize: 0xA4 }
-  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _MEM_REGIONS, symObjAddr: 0x1D30, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _help, symObjAddr: 0x0, symBinAddr: 0x10000195C, symSize: 0xA4 }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _MEM_REGIONS, symObjAddr: 0x1D48, symBinAddr: 0x100008000, symSize: 0x0 }
   - { offsetInCU: 0xE3, offset: 0xE3, size: 0x8, addend: 0x0, symName: _CURRENT_STATE, symBinAddr: 0x100008020, symSize: 0x0 }
   - { offsetInCU: 0x130, offset: 0x130, size: 0x8, addend: 0x0, symName: _NEXT_STATE, symBinAddr: 0x1000080A8, symSize: 0x0 }
   - { offsetInCU: 0x145, offset: 0x145, size: 0x8, addend: 0x0, symName: _RUN_FLAG, symBinAddr: 0x100008130, symSize: 0x0 }
   - { offsetInCU: 0x161, offset: 0x161, size: 0x8, addend: 0x0, symName: _INSTRUCTION_COUNT, symBinAddr: 0x1000080A4, symSize: 0x0 }
   - { offsetInCU: 0x176, offset: 0x176, size: 0x8, addend: 0x0, symName: _PROGRAM_SIZE, symBinAddr: 0x10000812C, symSize: 0x0 }
   - { offsetInCU: 0x18B, offset: 0x18B, size: 0x8, addend: 0x0, symName: _prog_file, symBinAddr: 0x100008134, symSize: 0x0 }
-  - { offsetInCU: 0x1AE, offset: 0x1AE, size: 0x8, addend: 0x0, symName: _help, symObjAddr: 0x0, symBinAddr: 0x100001970, symSize: 0xA4 }
-  - { offsetInCU: 0x1C3, offset: 0x1C3, size: 0x8, addend: 0x0, symName: _mem_read_32, symObjAddr: 0xA4, symBinAddr: 0x100001A14, symSize: 0x80 }
-  - { offsetInCU: 0x200, offset: 0x200, size: 0x8, addend: 0x0, symName: _mem_write_32, symObjAddr: 0x124, symBinAddr: 0x100001A94, symSize: 0xA8 }
-  - { offsetInCU: 0x234, offset: 0x234, size: 0x8, addend: 0x0, symName: _cycle, symObjAddr: 0x1CC, symBinAddr: 0x100001B3C, symSize: 0x60 }
-  - { offsetInCU: 0x255, offset: 0x255, size: 0x8, addend: 0x0, symName: _handle_instruction, symObjAddr: 0xCC0, symBinAddr: 0x100002630, symSize: 0x720 }
-  - { offsetInCU: 0x5BE, offset: 0x5BE, size: 0x8, addend: 0x0, symName: _run, symObjAddr: 0x22C, symBinAddr: 0x100001B9C, symSize: 0xE8 }
-  - { offsetInCU: 0x605, offset: 0x605, size: 0x8, addend: 0x0, symName: _runAll, symObjAddr: 0x314, symBinAddr: 0x100001C84, symSize: 0xC8 }
-  - { offsetInCU: 0x66A, offset: 0x66A, size: 0x8, addend: 0x0, symName: _mdump, symObjAddr: 0x3DC, symBinAddr: 0x100001D4C, symSize: 0x120 }
-  - { offsetInCU: 0x6E3, offset: 0x6E3, size: 0x8, addend: 0x0, symName: _rdump, symObjAddr: 0x4FC, symBinAddr: 0x100001E6C, symSize: 0xD4 }
-  - { offsetInCU: 0x772, offset: 0x772, size: 0x8, addend: 0x0, symName: _handle_command, symObjAddr: 0x5D0, symBinAddr: 0x100001F40, symSize: 0x3F4 }
-  - { offsetInCU: 0x8F3, offset: 0x8F3, size: 0x8, addend: 0x0, symName: _print_instruction, symObjAddr: 0x1500, symBinAddr: 0x100002E70, symSize: 0x5C4 }
-  - { offsetInCU: 0xE26, offset: 0xE26, size: 0x8, addend: 0x0, symName: _load_program, symObjAddr: 0xAEC, symBinAddr: 0x10000245C, symSize: 0x1BC }
-  - { offsetInCU: 0xEBE, offset: 0xEBE, size: 0x8, addend: 0x0, symName: _reset, symObjAddr: 0x9C4, symBinAddr: 0x100002334, symSize: 0xCC }
-  - { offsetInCU: 0xEF7, offset: 0xEF7, size: 0x8, addend: 0x0, symName: _init_memory, symObjAddr: 0xA90, symBinAddr: 0x100002400, symSize: 0x5C }
-  - { offsetInCU: 0x1157, offset: 0x1157, size: 0x8, addend: 0x0, symName: _sign_extend, symObjAddr: 0xCA8, symBinAddr: 0x100002618, symSize: 0x18 }
-  - { offsetInCU: 0x11DA, offset: 0x11DA, size: 0x8, addend: 0x0, symName: _initialize, symObjAddr: 0x13E0, symBinAddr: 0x100002D50, symSize: 0xB0 }
-  - { offsetInCU: 0x1224, offset: 0x1224, size: 0x8, addend: 0x0, symName: _print_program, symObjAddr: 0x1490, symBinAddr: 0x100002E00, symSize: 0x70 }
-  - { offsetInCU: 0x1267, offset: 0x1267, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1AC4, symBinAddr: 0x100003434, symSize: 0x11C }
+  - { offsetInCU: 0x1A3, offset: 0x1A3, size: 0x8, addend: 0x0, symName: _help, symObjAddr: 0x0, symBinAddr: 0x10000195C, symSize: 0xA4 }
+  - { offsetInCU: 0x1B8, offset: 0x1B8, size: 0x8, addend: 0x0, symName: _mem_read_32, symObjAddr: 0xA4, symBinAddr: 0x100001A00, symSize: 0x80 }
+  - { offsetInCU: 0x1F5, offset: 0x1F5, size: 0x8, addend: 0x0, symName: _mem_write_32, symObjAddr: 0x124, symBinAddr: 0x100001A80, symSize: 0xA8 }
+  - { offsetInCU: 0x229, offset: 0x229, size: 0x8, addend: 0x0, symName: _cycle, symObjAddr: 0x1CC, symBinAddr: 0x100001B28, symSize: 0x60 }
+  - { offsetInCU: 0x24A, offset: 0x24A, size: 0x8, addend: 0x0, symName: _handle_instruction, symObjAddr: 0xCC0, symBinAddr: 0x10000261C, symSize: 0x730 }
+  - { offsetInCU: 0x5DD, offset: 0x5DD, size: 0x8, addend: 0x0, symName: _run, symObjAddr: 0x22C, symBinAddr: 0x100001B88, symSize: 0xE8 }
+  - { offsetInCU: 0x624, offset: 0x624, size: 0x8, addend: 0x0, symName: _runAll, symObjAddr: 0x314, symBinAddr: 0x100001C70, symSize: 0xC8 }
+  - { offsetInCU: 0x689, offset: 0x689, size: 0x8, addend: 0x0, symName: _mdump, symObjAddr: 0x3DC, symBinAddr: 0x100001D38, symSize: 0x120 }
+  - { offsetInCU: 0x702, offset: 0x702, size: 0x8, addend: 0x0, symName: _rdump, symObjAddr: 0x4FC, symBinAddr: 0x100001E58, symSize: 0xD4 }
+  - { offsetInCU: 0x791, offset: 0x791, size: 0x8, addend: 0x0, symName: _handle_command, symObjAddr: 0x5D0, symBinAddr: 0x100001F2C, symSize: 0x3F4 }
+  - { offsetInCU: 0x912, offset: 0x912, size: 0x8, addend: 0x0, symName: _print_instruction, symObjAddr: 0x1510, symBinAddr: 0x100002E6C, symSize: 0x5C4 }
+  - { offsetInCU: 0xE45, offset: 0xE45, size: 0x8, addend: 0x0, symName: _load_program, symObjAddr: 0xAEC, symBinAddr: 0x100002448, symSize: 0x1BC }
+  - { offsetInCU: 0xEDD, offset: 0xEDD, size: 0x8, addend: 0x0, symName: _reset, symObjAddr: 0x9C4, symBinAddr: 0x100002320, symSize: 0xCC }
+  - { offsetInCU: 0xF16, offset: 0xF16, size: 0x8, addend: 0x0, symName: _init_memory, symObjAddr: 0xA90, symBinAddr: 0x1000023EC, symSize: 0x5C }
+  - { offsetInCU: 0x1176, offset: 0x1176, size: 0x8, addend: 0x0, symName: _sign_extend, symObjAddr: 0xCA8, symBinAddr: 0x100002604, symSize: 0x18 }
+  - { offsetInCU: 0x11F9, offset: 0x11F9, size: 0x8, addend: 0x0, symName: _initialize, symObjAddr: 0x13F0, symBinAddr: 0x100002D4C, symSize: 0xB0 }
+  - { offsetInCU: 0x1243, offset: 0x1243, size: 0x8, addend: 0x0, symName: _print_program, symObjAddr: 0x14A0, symBinAddr: 0x100002DFC, symSize: 0x70 }
+  - { offsetInCU: 0x1286, offset: 0x1286, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1AD4, symBinAddr: 0x100003430, symSize: 0x11C }
 ...

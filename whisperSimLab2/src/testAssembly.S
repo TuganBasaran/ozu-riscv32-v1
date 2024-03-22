@@ -1,7 +1,7 @@
 .globl main
 .text
 main:
-    #;;  Set a base address
+     #;;  Set a base address
         lui    x3, 0x10000
 
         addi  x5, zero, 255
